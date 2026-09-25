@@ -1,0 +1,6 @@
+package Ex10;
+public class InventoryCheckedException extends Exception {
+    public InventoryCheckedException(String message) {
+        super(message);
+    }
+}
