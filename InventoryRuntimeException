@@ -1,0 +1,6 @@
+package Ex10;
+public class InventoryRuntimeException extends RuntimeException {
+    public InventoryRuntimeException(String message) {
+        super(message);
+    }
+}
