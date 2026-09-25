@@ -1,0 +1,24 @@
+package Ex10;
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("CHECKED EXCEPTION VERSION");
+        InventoryControllerChecked checkedController = new InventoryControllerChecked();
+        checkedController.update("Laptop", 500);
+        checkedController.update("Chuột", -10);
+        checkedController.update("Bàn phím", 1_000_000_000);
+        System.out.println("UNCHECKED EXCEPTION VERSION");
+        InventoryControllerUnchecked uncheckedController = new InventoryControllerUnchecked();
+        try {
+            uncheckedController.update("Laptop", 500);
+            uncheckedController.update("Chuột", -10);
+        } catch (InventoryRuntimeException e) {
+            System.out.println("[GLOBAL HANDLER] " + e.getMessage());
+        }
+        try {
+            uncheckedController.update("Bàn phím", 1_000_000_000);
+        } catch (InventoryRuntimeException e) {
+            System.out.println("[GLOBAL HANDLER] " + e.getMessage());
+        }
+    }
+}
