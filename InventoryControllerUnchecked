@@ -1,0 +1,7 @@
+package Ex10;
+public class InventoryControllerUnchecked {
+    private InventoryServiceUnchecked service = new InventoryServiceUnchecked();
+    public void update(String item, int qty) {
+        service.updateInventory(item, qty);
+    }
+}
