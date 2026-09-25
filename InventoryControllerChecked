@@ -1,0 +1,11 @@
+package Ex10;
+public class InventoryControllerChecked {
+    private InventoryServiceChecked service = new InventoryServiceChecked();
+    public void update(String item, int qty) {
+        try {
+            service.updateInventory(item, qty);
+        } catch (InventoryCheckedException e) {
+            System.out.println("[CHECKED ERROR] " + e.getMessage());
+        }
+    }
+}
