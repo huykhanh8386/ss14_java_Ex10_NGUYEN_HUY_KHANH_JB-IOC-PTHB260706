@@ -1,0 +1,16 @@
+package Ex10;
+public class InventoryServiceUnchecked {
+    private static final int MAX_QUANTITY = 1_000_000;
+    public void updateInventory(String item, int qty) {
+        if (item == null || item.trim().isEmpty()) {
+            throw new InventoryRuntimeException("Thông tin sản phẩm không hợp lệ!");
+        }
+        if (qty < 0) {
+            throw new InventoryRuntimeException("Số lượng sản phẩm không được âm!");
+        }
+        if (qty > MAX_QUANTITY) {
+            throw new InventoryRuntimeException("Số lượng cập nhật vượt giới hạn an toàn: " + MAX_QUANTITY);
+        }
+        System.out.println("Cập nhật kho thành công: " + item + " - Số lượng: " + qty);
+    }
+}
